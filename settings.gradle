@@ -19,5 +19,5 @@ pluginManagement {
         }
     }
 }
-rootProject.name = 'KotlinGraph'
-
+enableFeaturePreview("GRADLE_METADATA")
+rootProject.name = 'KGraph'
