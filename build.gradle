@@ -14,6 +14,12 @@ kotlin {
     targets {
         fromPreset(presets.jvm, 'jvm')
         fromPreset(presets.js, 'js')
+        fromPreset(presets.mingwX64, 'win64'){
+            compilations.main.outputKinds('DYNAMIC')
+        }
+        fromPreset(presets.linuxX64, 'linuxX86_64'){
+            compilations.main.outputKinds('DYNAMIC')
+        }
     }
     sourceSets {
         commonMain {
