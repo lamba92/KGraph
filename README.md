@@ -3,7 +3,15 @@
 # KGraph
 
 KGraph is a library that handles grpah data structures using only the Kotlin common standard library. 
-At the moment, it only compiles for JVM, JS and Linux X86_64, other native builds will come as i figure out how to compile multi-platform.
+At the moment, it compiles for:
+
+ - JVM
+ - JS
+ - Android Native ARM32
+ - Android Native ARM64
+ - Linux X86_64
+ 
+ Other native builds will come as i figure out how to compile multi-platform.
 
 ## Goals
 

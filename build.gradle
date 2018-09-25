@@ -12,17 +12,12 @@ version '1.0'
 
 kotlin {
     targets {
-        fromPreset(presets.jvm, 'jvm')
-        fromPreset(presets.js, 'js')
-        fromPreset(presets.mingwX64, 'win64'){
-            compilations.main.outputKinds('DYNAMIC')
-        }
-        fromPreset(presets.androidNativeArm64, 'android_native_x64'){
-            compilations.main.outputKinds('DYNAMIC')
-        }
-        fromPreset(presets.linuxX64, 'linuxX86_64'){
-            compilations.main.outputKinds('DYNAMIC')
-        }
+        fromPreset(presets.js,                 'js')
+        fromPreset(presets.jvm,                'jvm')
+        fromPreset(presets.mingwX64,           'win64')             { compilations.main.outputKinds('DYNAMIC') }
+        fromPreset(presets.linuxX64,           'linuxX86_64')       { compilations.main.outputKinds('DYNAMIC') }
+        fromPreset(presets.androidNativeArm64, 'android_native_64') { compilations.main.outputKinds('DYNAMIC') }
+        fromPreset(presets.androidNativeArm32, 'android_native_32') { compilations.main.outputKinds('DYNAMIC') }
     }
     sourceSets {
         commonMain {
