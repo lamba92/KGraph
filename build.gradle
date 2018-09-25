@@ -17,6 +17,9 @@ kotlin {
         fromPreset(presets.mingwX64, 'win64'){
             compilations.main.outputKinds('DYNAMIC')
         }
+        fromPreset(presets.androidNativeArm64, 'android_native_x64'){
+            compilations.main.outputKinds('DYNAMIC')
+        }
         fromPreset(presets.linuxX64, 'linuxX86_64'){
             compilations.main.outputKinds('DYNAMIC')
         }
