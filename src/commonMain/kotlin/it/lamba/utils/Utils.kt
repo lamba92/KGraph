@@ -23,3 +23,14 @@ fun Random.randomString(length: Int = nextInt(15, 21)): String {
     }
     return s
 }
+
+fun <T> ArrayList<T>.orderedInsert(item: T, comparator: Comparator<T>) {
+    for(i in 0 until size)
+        if(comparator.compare(item, this[i]) > 0) add(i, item)
+}
+
+fun <E> Collection<E>.sumBy(selector: (E) -> Double): Double {
+    var sum = 0.0
+    forEach { sum += selector(it) }
+    return sum
+}

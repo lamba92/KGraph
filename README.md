@@ -58,7 +58,7 @@ KGraph is made by 3 main interfaces: [Graph](https://github.com/lamba92/KGraph/b
 To create an instance of a KGraph which nodes contains an Integer value:
 
 ```
-import it.lamba.kgraph.KGraph
+import it.lamba.kgraph.SimpleGraph
 
 val g = KGraph<Int>()
 val n1 = g.addNode(value = 2)
