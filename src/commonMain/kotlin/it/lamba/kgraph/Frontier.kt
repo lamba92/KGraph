@@ -1,7 +1,9 @@
 package it.lamba.kgraph
-import it.lamba.utils.Queue
 
-interface Frontier: Queue<Frontier.Element> {
+interface Frontier: MutableMap<Node, Frontier.Element> {
+
+    fun next(): Element
+    fun hasNext(): Boolean
 
     interface Element {
         val node: Node

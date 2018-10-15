@@ -23,7 +23,7 @@ interface BlindSearchAlgorithm: Algorithm {
     }
 }
 
-interface SearchAlgorithm: BlindSearchAlgorithm{
+interface SearchAlgorithm: BlindSearchAlgorithm {
     val heuristic: (initialNode: Node, targetValue: Any, graph: Graph) -> Double
 }
 

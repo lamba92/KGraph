@@ -1,5 +1,8 @@
 package it.lamba.utils
 
+import it.lamba.kgraph.Graph
+import it.lamba.kgraph.impl.SimpleGraph
+import it.lamba.kgraph.impl.SimpleNode
 import kotlin.random.Random
 
 fun <K, V> MutableSet<MutableMap.MutableEntry<K, V>>.removeIf(filter: (key: K, value: V) -> Boolean){
@@ -34,3 +37,6 @@ fun <E> Collection<E>.sumBy(selector: (E) -> Double): Double {
     forEach { sum += selector(it) }
     return sum
 }
+
+fun <K, V> Map<K, V>.forEach(block: (K, V) -> Unit)
+        = forEach { block(it.key, it.value) }

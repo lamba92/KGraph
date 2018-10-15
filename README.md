@@ -2,7 +2,7 @@
 
 # KGraph
 
-KGraph is a library that handles grpah data structures using only the Kotlin common standard library. 
+KGraph provides an easy to use platform independent graph library. It bundles a convenient DSL to handel the creation of the graph on the go. 
 At the moment, it compiles for:
 
  - JVM
@@ -11,7 +11,7 @@ At the moment, it compiles for:
  - Android Native ARM64
  - Linux X86_64
  
- Other native builds will come as i figure out how to compile multi-platform.
+ Other native builds will come as I figure out how to compile multi-platform.
 
 ## Goals
 
@@ -55,14 +55,38 @@ dependencies {
 
 KGraph is made by 3 main interfaces: [Graph](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/data/Graph.kt), [Node](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/data/Node.kt) and [Edge](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/data/Edge.kt).
 
-To create an instance of a KGraph which nodes contains an Integer value:
+Here an example for creating a graph using the provided DSL:
 
 ```
-import it.lamba.kgraph.SimpleGraph
+import it.lamba.kgraph.impl.dsl.bidirectionEdge
+import it.lamba.kgraph.impl.dsl.edge
+import it.lamba.kgraph.impl.dsl.graphBuilder
+import it.lamba.kgraph.impl.dsl.node
+import it.lamba.utils.randomString
+import kotlin.random.Random
 
-val g = KGraph<Int>()
-val n1 = g.addNode(value = 2)
-val n2 = g.addNode(value = 4)
+val g = graphBuilder {
 
-val (e1, e2) = g.addBidirectionEdge(n1, n2, costN2toN1 = 1.0, costN1toN2 = 1.5)
+    val n1 = node {
+        id = "ciao"
+        value = 20
+    }
+
+    val n2 = node {
+        id = Random.randomString()
+        value = HashMap<Int, String>()
+    }
+
+    bidirectionEdge {
+        initialNode = n1
+        arrivalNode = n2
+        cost = 20.0
+    }
+
+    edge {
+        initialNode = n1
+        arrivalNode = n1
+        cost = 13.123
+    }
+}
 ```

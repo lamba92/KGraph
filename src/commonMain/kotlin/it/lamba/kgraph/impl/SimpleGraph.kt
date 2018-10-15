@@ -5,7 +5,7 @@ import it.lamba.kgraph.MutableGraph
 import it.lamba.kgraph.Node
 import it.lamba.utils.removeIf
 
-class SimpleGraph : MutableGraph {
+class SimpleGraph(val allowNodeOverride: Boolean = false) : MutableGraph {
 
     override fun iterator() = nodes.values.iterator()
 
@@ -26,7 +26,10 @@ class SimpleGraph : MutableGraph {
 
     override operator fun contains(id: String) = id in nodes.keys || id in edges.keys
 
-    override fun addNode(value: Any, id: String) = SimpleNode(id, value).apply { nodes[this.id] = this }
+    override fun addNode(value: Any?, id: String) = SimpleNode(id, value).apply {
+        if(nodes.containsKey(id)) throw IllegalArgumentException("Node with $id already exists")
+        nodes[this.id] = this
+    }
 
     override fun addEdge(n1: Node, n2: Node, cost: Double): Edge {
         if(n1 !in this || n2 !in this) throw IllegalArgumentException("One of the nodes is not inside the graph.")
