@@ -53,7 +53,7 @@ dependencies {
 
 ## Usage
 
-KGraph is made by 3 main interfaces: [Graph](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/kgraph/data/Graph.kt), [Node]https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/kgraph/data/Node.kt) and [Edge](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/kgraph/data/Edge.kt).
+KGraph is made by 3 main interfaces: [Graph](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/kgraph/data/Graph.kt), [Node](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/kgraph/data/Node.kt) and [Edge](https://github.com/lamba92/KGraph/blob/master/src/commonMain/kotlin/it/lamba/kgraph/data/Edge.kt).
 
 Here an example for creating a graph using the provided DSL:
 
