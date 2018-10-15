@@ -39,7 +39,7 @@ class PriorityQueueSet<E, T>(val caseComparator: (a: E, b: E) -> CompareCase): Q
                 CompareCase.IGNORE -> return false
             }
         }
-
+        return true //TODO wrong
     }
 
     override fun offer(e: E): Boolean {

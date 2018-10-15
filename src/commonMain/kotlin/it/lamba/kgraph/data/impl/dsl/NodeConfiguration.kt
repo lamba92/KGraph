@@ -1,4 +1,4 @@
-package it.lamba.kgraph.impl.dsl
+package it.lamba.kgraph.data.impl.dsl
 
 import it.lamba.utils.randomString
 import kotlin.random.Random

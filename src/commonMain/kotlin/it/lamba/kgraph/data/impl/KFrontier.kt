@@ -1,10 +1,12 @@
-package it.lamba.kgraph.impl
+package it.lamba.kgraph.data.impl
 
-import it.lamba.kgraph.Frontier
-import it.lamba.kgraph.Node
+import it.lamba.kgraph.data.Edge
+import it.lamba.kgraph.searches.Frontier
+import it.lamba.kgraph.data.Node
 import it.lamba.utils.forEach
 
-class KFrontier(val nextElementEvaluator: (Frontier.Element) -> Double): Frontier {
+class KFrontier(override val nextElementEvaluator: (Frontier.Element) -> Double):
+    Frontier {
 
     private val data = HashMap<Node, Frontier.Element>()
 
@@ -50,7 +52,13 @@ class KFrontier(val nextElementEvaluator: (Frontier.Element) -> Double): Frontie
 
     override fun remove(key: Node) = data.remove(key)
 
-
-
+    data class KElement(
+        override val node: Node,
+        override val depth: Int,
+        override val path: ArrayList<Edge>,
+        override val costUntilHere: Double,
+        override val parentNode: Node? = null,
+        override val heuristic: Double? = 0.0
+    ) : Frontier.Element
 
 }

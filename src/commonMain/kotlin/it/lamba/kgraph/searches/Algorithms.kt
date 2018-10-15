@@ -1,4 +1,8 @@
-package it.lamba.kgraph
+package it.lamba.kgraph.searches
+
+import it.lamba.kgraph.data.Edge
+import it.lamba.kgraph.data.Graph
+import it.lamba.kgraph.data.Node
 
 interface Algorithm {
     val graph: Graph
@@ -13,7 +17,7 @@ interface Algorithm {
 interface BlindSearchAlgorithm: Algorithm {
 
     val initialNode: Node
-    val targetValue: Any
+    val targetValue: Any?
     override fun compute(): SearchResult
 
     interface SearchResult: Algorithm.Result {

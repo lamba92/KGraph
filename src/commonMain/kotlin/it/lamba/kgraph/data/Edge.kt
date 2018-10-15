@@ -1,4 +1,4 @@
-package it.lamba.kgraph
+package it.lamba.kgraph.data
 
 interface Edge {
     val initialNode: Node

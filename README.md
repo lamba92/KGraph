@@ -16,7 +16,7 @@ At the moment, it compiles for:
 ## Goals
 
 - add search algorithms, blind and heuristic driven
-- learn and add multi-platform tests
+- add multi-platform tests
 - allow serialization of nodes, edge and whole graph
 - save on file and load from file
 - platform specif graphic visualizations (help reeeaaaally wanted)
@@ -89,4 +89,7 @@ val g = graphBuilder {
         cost = 13.123
     }
 }
+
+val result = BreathWidthSearch(g, g.nodes.first(), "targetValue").compute()
+
 ```

@@ -1,6 +1,6 @@
-package it.lamba.kgraph.impl
+package it.lamba.kgraph.data.impl
 
-import it.lamba.kgraph.Node
+import it.lamba.kgraph.data.Node
 
 data class SimpleNode(override val id: String, var nodeValue: Any?): Node {
 

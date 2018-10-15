@@ -1,6 +1,6 @@
-package it.lamba.kgraph.impl.dsl
+package it.lamba.kgraph.data.impl.dsl
 
-import it.lamba.kgraph.impl.SimpleGraph
+import it.lamba.kgraph.data.impl.SimpleGraph
 
 fun graphBuilder(allowNodeOverride: Boolean = false, block: SimpleGraph.() -> Unit)
         = SimpleGraph(allowNodeOverride).apply(block)
@@ -13,4 +13,3 @@ fun SimpleGraph.edge(block: EdgeConfiguration.() -> Unit)
 
 fun SimpleGraph.bidirectionEdge(block: EdgeConfiguration.() -> Unit)
         = EdgeConfiguration().apply(block).let { addBidirectionalEdge(it.initialNode!!, it.arrivalNode!!, it.cost!!) }
-

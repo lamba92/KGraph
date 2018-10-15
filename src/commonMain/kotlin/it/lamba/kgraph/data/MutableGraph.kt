@@ -1,8 +1,6 @@
-package it.lamba.kgraph
+package it.lamba.kgraph.data
 
-import it.lamba.kgraph.impl.SimpleNode
-import it.lamba.utils.randomString
-import kotlin.random.Random
+import it.lamba.kgraph.data.impl.SimpleNode
 
 interface MutableGraph: Graph {
     fun addEdge(n1: Node, n2: Node, cost: Double): Edge

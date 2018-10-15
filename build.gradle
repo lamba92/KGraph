@@ -52,5 +52,29 @@ kotlin {
                 implementation 'org.jetbrains.kotlin:kotlin-test-js'
             }
         }
+        win64Main {
+            
+        }
+        win64test {
+            
+        }
+        linuxX86_64Main {
+            
+        }
+        linuxX86_64test {
+            
+        }
+        android_native_64Main {
+            
+        }
+        android_native_64Test {
+            
+        }
+        android_native_32Main {
+            
+        }
+        android_native_32Test {
+            
+        }
     }
 }

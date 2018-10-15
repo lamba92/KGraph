@@ -1,7 +1,7 @@
-package it.lamba.kgraph.impl
+package it.lamba.kgraph.data.impl
 
-import it.lamba.kgraph.Edge
-import it.lamba.kgraph.Node
+import it.lamba.kgraph.data.Edge
+import it.lamba.kgraph.data.Node
 import it.lamba.utils.randomString
 import kotlin.random.Random
 
