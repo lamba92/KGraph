@@ -1,5 +1,7 @@
 package it.lamba.utils
 
+import it.lamba.kgraph.data.Graph
+import it.lamba.kgraph.data.Node
 import kotlin.random.Random
 
 fun <K, V> MutableSet<MutableMap.MutableEntry<K, V>>.removeIf(filter: (key: K, value: V) -> Boolean){
@@ -39,3 +41,9 @@ fun <K, V> Map<K, V>.forEach(block: (K, V) -> Unit)
         = forEach { block(it.key, it.value) }
 
 expect fun getCurrentTimeInMillis(): Long
+
+inline fun <T> measureTimeMillis(block: () -> T): Pair<T, Long> {
+    val start = getCurrentTimeInMillis()
+    val res = block()
+    return Pair(res, getCurrentTimeInMillis() - start)
+}

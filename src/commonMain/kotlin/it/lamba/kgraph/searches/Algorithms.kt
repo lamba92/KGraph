@@ -6,11 +6,10 @@ import it.lamba.kgraph.data.Node
 
 interface Algorithm {
     val graph: Graph
-    fun compute(): Result
+    fun compute(): Pair<Result, Long>
 
     interface Result {
         val successful: Boolean
-        val timeElapsed: Long
     }
 }
 
@@ -18,10 +17,10 @@ interface BlindSearchAlgorithm: Algorithm {
 
     val initialNode: Node
     val targetValue: Any?
-    override fun compute(): SearchResult
+    override fun compute(): Pair<SearchResult, Long>
 
     interface SearchResult: Algorithm.Result {
-        val path: ArrayList<Edge>
+        val path: List<Edge>
         val visitedNodes: Set<Node>
         val pathCost: Double
     }

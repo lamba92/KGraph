@@ -6,4 +6,6 @@ interface Edge {
     val cost: Double
     val id: String
     operator fun contains(node: Node?): Boolean
+    operator fun component1(): Node
+    operator fun component2(): Node
 }
