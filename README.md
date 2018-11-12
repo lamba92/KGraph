@@ -2,7 +2,7 @@
 
 # KGraph
 
-KGraph provides an easy to use platform independent graph library. It bundles a convenient DSL to handel the creation of the graph on the go. 
+KGraph provides an easy to use platform independent graph library. It bundles a convenient DSL to handle the creation of the graph on the go. 
 At the moment, it compiles for:
 
  - JVM
@@ -15,13 +15,12 @@ At the moment, it compiles for:
 
 ## Goals
 
-- add search algorithms, blind and heuristic driven
-- add multi-platform tests
-- allow serialization of nodes, edge and whole graph
-- save on file and load from file
-- platform specif graphic visualizations (help reeeaaaally wanted)
-- add Dokka wherever
-- who knows!
+- [ ] add search algorithms, blind and heuristic driven
+- [x] add multi-platform tests
+- [ ] allow serialization of nodes, edge and whole graph
+- [ ] save on file and load from file
+- [ ] platform specif graphic visualizations (help reeeaaaally wanted)
+- [ ] add Dokka wherever
 
 ## Installing [![](https://jitpack.io/v/lamba92/kgraph.svg)](https://jitpack.io/#lamba92/kgraph)
 
@@ -90,6 +89,6 @@ val g = graphBuilder {
     }
 }
 
-val result = BreathWidthSearch(g, g.nodes.first(), "targetValue").compute()
+val (result, timeElapsed) = DepthFirstSearch(g, g.nodes.first(), "targetValue").compute()
 
 ```

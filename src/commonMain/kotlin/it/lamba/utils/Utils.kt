@@ -47,3 +47,6 @@ inline fun <T> measureTimeMillis(block: () -> T): Pair<T, Long> {
     val res = block()
     return Pair(res, getCurrentTimeInMillis() - start)
 }
+
+fun StringBuilder.appendln(obj: Any?) = append(obj.toString() + "\n")
+fun StringBuilder.appendTabbedln(obj: Any?) = append("    ${obj.toString()}\n")

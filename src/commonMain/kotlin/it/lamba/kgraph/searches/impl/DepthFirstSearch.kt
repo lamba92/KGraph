@@ -20,7 +20,6 @@ class DepthFirstSearch(
     override fun compute(): Pair<KBlindSearchResult, Long> {
         clean()
         return measureTimeMillis {
-            visitedNodes.add(initialNode)
             KBlindSearchResult(
                 iterate(initialNode),
                 visitedEdges.reversed(),
@@ -36,9 +35,10 @@ class DepthFirstSearch(
     }
 
     private fun iterate(currentNode: Node): Boolean {
+        visitedNodes.add(currentNode)
         if(targetValue in currentNode)
             return true
-        currentNode.getEdges(graph).forEach { edge ->
+        for(edge in currentNode.getEdges(graph)){
             if (edge.arrivalNode !in visitedNodes && iterate(edge.arrivalNode)){
                 visitedEdges.add(edge)
                 toReturnNodesNodes.add(edge.arrivalNode)

@@ -9,4 +9,5 @@ data class SimpleEdge(override val initialNode: Node, override val arrivalNode: 
                       override val cost: Double,
                       override val id: String = Random.randomString()): Edge {
     override fun contains(node: Node?) = node == initialNode || node == arrivalNode
+    override fun toString() = "${initialNode.id} --$cost-> ${arrivalNode.id}"
 }
