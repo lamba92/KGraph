@@ -57,10 +57,10 @@ KGraph is made by 3 main interfaces: [Graph](https://github.com/lamba92/KGraph/b
 Here an example for creating a graph using the provided DSL:
 
 ```
-import it.lamba.kgraph.impl.dsl.bidirectionEdge
-import it.lamba.kgraph.impl.dsl.edge
-import it.lamba.kgraph.impl.dsl.graphBuilder
-import it.lamba.kgraph.impl.dsl.node
+import it.lamba.kgraph.dsl.bidirectionEdge
+import it.lamba.kgraph.dsl.edge
+import it.lamba.kgraph.dsl.graphBuilder
+import it.lamba.kgraph.dsl.node
 import it.lamba.utils.randomString
 import kotlin.random.Random
 
