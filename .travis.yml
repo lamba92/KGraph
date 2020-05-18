@@ -1,0 +1,27 @@
+jobs:
+  include:
+    - os: osx
+      osx_image: xcode11.3
+    - os: linux
+    - os: windows
+
+env:
+  global:
+    - GRAVIS_REPO="https://github.com/DanySK/Gravis-CI.git"
+    - GRAVIS="$HOME/gravis"
+    - JDK="adopt@1.8
+
+before_install:
+  - travis_retry git clone --depth 1 $GRAVIS_REPO $GRAVIS
+  - source $GRAVIS/install-jdk
+  - if [ "$TRAVIS_OS_NAME" != "windows" ]; then chmod +x ./gradle; fi
+
+script: ./gradlew check --console=plain
+
+deploy:
+  provider: script
+  script: ./gradlew bintrayUpload --console=plain
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
