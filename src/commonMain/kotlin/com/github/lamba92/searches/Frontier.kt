@@ -3,19 +3,19 @@ package com.github.lamba92.searches
 import com.github.lamba92.data.Edge
 import com.github.lamba92.data.Node
 
-interface Frontier: MutableMap<Node, Frontier.Element> {
+interface Frontier<T, R : Comparable<R>> {
 
-    val nextElementEvaluator: (Element) -> Double
+    fun next(): Element<T, R>
 
-    fun next(): Element
     fun hasNext(): Boolean
 
-    interface Element {
-        val node: Node
+    interface Element<T, R : Comparable<R>> {
+        val node: Node<T>
         val depth: Int
-        val path: ArrayList<Edge>
-        val costUntilHere: Double
-        val parentNode: Node?
+        val path: List<Edge<T, R>>
+        val costUntilHere: R
+        val parentNode: Node<T>?
         val heuristic: Double?
     }
+
 }

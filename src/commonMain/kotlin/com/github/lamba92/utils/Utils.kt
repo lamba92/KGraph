@@ -1,7 +1,5 @@
 package com.github.lamba92.utils
 
-import it.lamba.kgraph.data.Graph
-import it.lamba.kgraph.data.Node
 import kotlin.random.Random
 
 fun <K, V> MutableSet<MutableMap.MutableEntry<K, V>>.removeIf(filter: (key: K, value: V) -> Boolean){

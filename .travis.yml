@@ -14,7 +14,7 @@ env:
 before_install:
   - travis_retry git clone --depth 1 $GRAVIS_REPO $GRAVIS
   - source $GRAVIS/install-jdk
-  - if [ "$TRAVIS_OS_NAME" != "windows" ]; then chmod +x ./gradle; fi
+  - if [ "$TRAVIS_OS_NAME" != "windows" ]; then chmod +x ./gradlew; fi
 
 script: ./gradlew check --console=plain
 
