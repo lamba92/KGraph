@@ -1,7 +1,7 @@
 package com.github.lamba91
 
 import com.github.lamba92.data.Node
-import com.github.lamba92.data.impl.SetGraph
+import com.github.lamba92.data.SetGraph
 import com.github.lamba92.data.impl.dsl.graphBuilder
 import com.github.lamba92.searches.impl.DepthFirstSearch
 import kotlin.test.Test

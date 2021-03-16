@@ -55,6 +55,10 @@ kotlin {
     linuxArm32Hfp()
 
     sourceSets {
+        all {
+            languageSettings.useExperimentalAnnotation("kotlin.experimental.ExperimentalTypeInference")
+            languageSettings.useExperimentalAnnotation("kotlin.time.ExperimentalTime")
+        }
         commonMain {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.1.0")

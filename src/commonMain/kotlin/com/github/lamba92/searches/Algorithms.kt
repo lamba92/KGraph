@@ -3,30 +3,37 @@ package com.github.lamba92.searches
 import com.github.lamba92.data.Edge
 import com.github.lamba92.data.Graph
 import com.github.lamba92.data.Node
+import kotlin.time.Duration
 
-interface Algorithm {
-    val graph: Graph
-    fun compute(): Pair<Result, Long>
+interface Algorithm<T, R : Comparable<R>> {
+
+    val graph: Graph<T, R>
+    fun compute(): Result
 
     interface Result {
         val successful: Boolean
+        val timeElapsed: Duration
     }
+
 }
 
-interface BlindSearchAlgorithm: Algorithm {
+interface SearchAlgorithm<T, R : Comparable<R>> : Algorithm<T, R> {
 
-    val initialNode: Node
-    val targetValue: Any?
-    override fun compute(): Pair<SearchResult, Long>
+    val initialNode: Node<T>
+    val targetValue: Node<T>
 
-    interface SearchResult: Algorithm.Result {
-        val path: List<Edge>
-        val visitedNodes: Set<Node>
-        val pathCost: Double
-    }
+    override fun compute(): SearchResult<T, R>
+
 }
 
-interface SearchAlgorithm: BlindSearchAlgorithm {
-    val heuristic: (initialNode: Node, targetValue: Any, graph: Graph) -> Double
+interface WithHeuristicSearchAlgorithm<T, R : Comparable<R>, K : Comparable<K>> : Algorithm<T, R> {
+    val heuristicEvaluator: (Node<T>, Node<T>) -> K
 }
 
+data class SearchResult<T, R: Comparable<R>>(
+    val path: List<Edge<T, R>>,
+    val visitedNodes: Set<Node<T>>,
+    val pathCost: R,
+    override val successful: Boolean,
+    override val timeElapsed: Duration
+) : Algorithm.Result
