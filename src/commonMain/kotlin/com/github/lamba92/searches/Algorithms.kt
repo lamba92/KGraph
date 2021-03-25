@@ -20,7 +20,7 @@ interface Algorithm<T, R : Comparable<R>> {
 interface SearchAlgorithm<T, R : Comparable<R>> : Algorithm<T, R> {
 
     val initialNode: Node<T>
-    val targetValue: Node<T>
+    val targetNode: Node<T>
 
     override fun compute(): SearchResult<T, R>
 
