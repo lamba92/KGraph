@@ -60,7 +60,7 @@ val (result, timeElapsed) = DepthFirstSearch(g, g.nodes.first(), "targetValue").
 
 ## Installing [![](https://jitpack.io/v/lamba92/kgraph.svg)](https://jitpack.io/#lamba92/kgraph)
 
-Add the [JitPack.io](http://jitpack.io) repository to the project `build.grade`:
+Add the [JitPack.io](http://jitpack.io) repository to the project `build.gradle`:
 ```
 repositories {
     maven { url 'https://jitpack.io' }
